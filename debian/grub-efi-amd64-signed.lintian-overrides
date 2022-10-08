@@ -1,0 +1,4 @@
+grub-efi-amd64-signed: portable-executable-missing-security-features usr/lib/grub/x86_64-efi-signed/gcdx64.efi.signed ASLR DEP/NX
+grub-efi-amd64-signed: portable-executable-missing-security-features usr/lib/grub/x86_64-efi-signed/grub.efi.signed ASLR DEP/NX
+grub-efi-amd64-signed: portable-executable-missing-security-features usr/lib/grub/x86_64-efi-signed/grubx64.efi.signed ASLR DEP/NX
+grub-efi-amd64-signed: portable-executable-missing-security-features usr/lib/grub/x86_64-efi-signed/grubnetx64.efi.signed ASLR DEP/NX

@@ -1,0 +1,55 @@
+#! /bin/sh
+set -e
+
+config_item ()
+{
+    if [ -f /etc/default/grub ]; then
+        . /etc/default/grub || return
+        for x in /etc/default/grub.d/*.cfg; do
+            if [ -e "$x" ]; then
+                . "$x"
+            fi
+        done
+    fi
+    eval echo "\$$1"
+}
+
+install_grub_efi ()
+{
+
+bootlader="ubuntu UOS  boot"
+
+if [ -f /usr/lib/grub/x86_64-efi-signed/grub.efi.signed  ] ; then
+        for i in $bootlader ; do
+                if [ -d "/boot/efi/EFI/$i" ] || mkdir -p /boot/efi/EFI/$i ; then
+                        cp /usr/lib/grub/x86_64-efi-signed/grub.efi.signed /boot/efi/EFI/$i/grub.efi
+			cp /usr/lib/shim/shimx64.efi.signed /boot/efi/EFI/$i/shimx64.efi
+                fi
+
+        done
+fi
+
+
+}
+
+
+case $1 in
+    configure)
+        bootloader_id="$(config_item GRUB_DISTRIBUTOR | tr A-Z a-z | \
+                         cut -d' ' -f1)"
+        
+	install_grub_efi
+	if [ "$bootloader_id" ] && [ -d "/boot/efi/EFI/$bootloader_id" ]; then
+            grub-install
+            if [ ! -d "/boot/efi/EFI/ubuntu" ];then
+                mkdir -p /boot/efi/EFI/ubuntu
+                cp /boot/efi/EFI/${bootloader_id}/* /boot/efi/EFI/ubuntu
+            fi
+        fi
+        ;;
+esac
+
+
+
+exit 0
+
