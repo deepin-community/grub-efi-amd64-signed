@@ -1,3 +1,9 @@
+grub-efi-amd64-signed (1.67.5+2.12+deepin1) unstable; urgency=medium
+
+  * update grubx64.efi.sig
+
+ -- lichenggang <lichenggang@deepin.org>  Tue, 16 Dec 2025 16:43:21 +0800
+
 grub-efi-amd64-signed (1.67.5+2.12+deepin) unstable; urgency=medium
 
   *  update grub 2.12
