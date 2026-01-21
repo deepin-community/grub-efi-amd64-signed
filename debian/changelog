@@ -1,3 +1,9 @@
+grub-efi-amd64-signed (1.67.5+2.12+deepin2) unstable; urgency=medium
+
+  * If we're not on an EFI system, do nothing else
+
+ -- lichenggang <lichenggang@deepin.org>  Wed, 21 Jan 2026 16:23:32 +0800
+
 grub-efi-amd64-signed (1.67.5+2.12+deepin1) unstable; urgency=medium
 
   * update grubx64.efi.sig
