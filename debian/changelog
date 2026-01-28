@@ -1,3 +1,9 @@
+grub-efi-amd64-signed (1.67.5+2.12+deepin3) unstable; urgency=medium
+
+  * add v20 cert signature to grubx64.efi for compatibility
+
+ -- zhouzilong <zhouzilong@uniontech.com>  Wed, 28 Jan 2026 17:32:05 +0800
+
 grub-efi-amd64-signed (1.67.5+2.12+deepin2) unstable; urgency=medium
 
   * If we're not on an EFI system, do nothing else
